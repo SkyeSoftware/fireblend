@@ -6,7 +6,10 @@ import 'package:fireblend/fireblend.dart';
 class FireblendAnalyticsWeb extends FireblendAnalytics {
   fb.Analytics _analytics;
 
-  FireblendAnalyticsWeb(fb.App app) : _analytics = fb.analytics(app);
+  FireblendAnalyticsWeb({fb.App app})
+      : _analytics = app != null ? fb.analytics(app) : fb.analytics();
+
+  FireblendAnalyticsWeb() : _analytics = fb.analytics();
 
   fb.Analytics get analytics => _analytics;
 

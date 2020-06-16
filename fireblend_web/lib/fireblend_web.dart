@@ -1,5 +1,6 @@
 library fireblend_web;
 
+export 'src/analytics.dart';
 export 'src/authentication.dart';
 export 'src/database.dart';
 export 'src/messaging.dart';
@@ -10,6 +11,7 @@ import 'dart:async';
 import 'package:firebase/firebase.dart' as fb;
 import 'package:fireblend/fireblend.dart';
 
+import 'src/analytics.dart';
 import 'src/authentication.dart';
 import 'src/database.dart';
 import 'src/messaging.dart';
@@ -41,6 +43,9 @@ class FireblendWeb extends Fireblend{
     }
     return FireblendWeb._internal(app);
   }
+
+  @override
+  FireblendAnalyticsWeb get analytics => FireblendAnalyticsWeb(_app);
 
   @override
   FireblendAuthWeb get auth => FireblendAuthWeb(_app);
