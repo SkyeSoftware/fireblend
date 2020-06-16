@@ -12,22 +12,22 @@ class FireblendAnalyticsWeb extends FireblendAnalytics {
 
   @override
   Future<void> logEvent({String name, Map<String, dynamic> parameters}) async {
-    _analytics.logEvent(name, parameters);
+    analytics.logEvent(name, parameters);
   }
 
   @override
   Future<void> setScreenName({String screenName}) async {
-    _analytics.setCurrentScreen(screenName);
+    analytics.setCurrentScreen(screenName);
   }
 
   @override
   Future<void> setUserId(String id) async {
-    _analytics.setUserId(id);
+    analytics.setUserId(id);
   }
 
   @override
   Future<void> logAppOpen(String id) async {
-    _analytics.logEvent('app_open', {});
+    analytics.logEvent('app_open', {});
   }
 
   @override
@@ -39,7 +39,7 @@ class FireblendAnalyticsWeb extends FireblendAnalytics {
 
   @override
   Future<void> logViewSearchResults(String searchTerm) async {
-    _analytics.logEvent('view_search_results', {
+    analytics.logEvent('view_search_results', {
       'searchTerm': searchTerm,
     });
   }

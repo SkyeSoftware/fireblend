@@ -6,7 +6,7 @@ import 'package:fireblend/fireblend.dart';
 class FireblendAnalyticsMobile extends FireblendAnalytics {
   FirebaseAnalytics _analytics;
 
-  FireblendAnalyticsMobile(FirebaseApp app) : _analytics = FirebaseAnalytics();
+  FireblendAnalyticsMobile() : _analytics = FirebaseAnalytics();
 
   FirebaseAnalytics get analytics => _analytics;
 
