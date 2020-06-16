@@ -6,6 +6,7 @@ export 'src/database.dart';
 export 'src/messaging.dart';
 export 'src/storage.dart';
 
+import 'src/analytics.dart';
 import 'src/authentication.dart';
 import 'src/database.dart';
 import 'src/messaging.dart';
@@ -16,4 +17,5 @@ abstract class Fireblend {
   FireblendDatabase get database;
   FireblendMessaging get messaging;
   FireblendStorage get storage;
+  FireblendAnalytics get analytics;
 }

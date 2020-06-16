@@ -4,6 +4,7 @@ export 'src/authentication.dart';
 export 'src/database.dart';
 export 'src/messaging.dart';
 export 'src/storage.dart';
+export 'src/analytics.dart';
 
 import 'dart:async';
 import 'dart:io' show Platform;
