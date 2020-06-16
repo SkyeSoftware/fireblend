@@ -32,16 +32,18 @@ class FireblendAnalyticsWeb extends FireblendAnalytics {
   }
 
   @override
-  Future<void> logSearch(String searchTerm) async {
+  Future<void> logSearch({String searchTerm, Map<String, dynamic> params}) async {
     await analytics.logEvent('search', {
       'searchTerm': searchTerm,
+      ...params
     });
   }
 
   @override
-  Future<void> logViewSearchResults(String searchTerm) async {
+  Future<void> logViewSearchResults({String searchTerm, Map<String, dynamic> params}) async {
     analytics.logEvent('view_search_results', {
       'searchTerm': searchTerm,
+      ...params
     });
   }
 }

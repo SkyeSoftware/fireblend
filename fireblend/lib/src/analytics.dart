@@ -3,6 +3,6 @@ abstract class FireblendAnalytics {
   Future<void> setScreenName({ String screenName });
   Future<void> setUserId(String id);
   Future<void> logAppOpen(String id);
-  Future<void> logSearch(String searchTerm);
-  Future<void> logViewSearchResults(String searchTerm);
+  Future<void> logSearch({String searchTerm, Map<String, dynamic> params});
+  Future<void> logViewSearchResults({String searchTerm, Map<String, dynamic> params});
 }

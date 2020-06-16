@@ -2,7 +2,6 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fireblend/fireblend.dart';
 
-
 class FireblendAnalyticsMobile extends FireblendAnalytics {
   FirebaseAnalytics _analytics;
 
@@ -11,12 +10,12 @@ class FireblendAnalyticsMobile extends FireblendAnalytics {
   FirebaseAnalytics get analytics => _analytics;
 
   @override
-  Future<void> logEvent({ String name, Map<String, dynamic> parameters}) async {
+  Future<void> logEvent({String name, Map<String, dynamic> parameters}) async {
     await analytics.logEvent(name: name, parameters: parameters);
   }
 
   @override
-  Future<void> setScreenName({ String screenName }) async {
+  Future<void> setScreenName({String screenName}) async {
     await analytics.setCurrentScreen(screenName: screenName, screenClassOverride: screenName);
   }
 
@@ -31,12 +30,13 @@ class FireblendAnalyticsMobile extends FireblendAnalytics {
   }
 
   @override
-  Future<void> logSearch(String searchTerm) async {
-    await analytics.logSearch(searchTerm: searchTerm);
+  Future<void> logSearch({String searchTerm, Map<String, dynamic> params}) async {
+    await analytics.logEvent(name: 'search', parameters: {'searchTerm': searchTerm, ...params});
   }
 
   @override
-  Future<void> logViewSearchResults(String searchTerm) async {
-    await analytics.logViewSearchResults(searchTerm: searchTerm, );
+  Future<void> logViewSearchResults({String searchTerm, Map<String, dynamic> params}) async {
+    await analytics
+        .logEvent(name: 'view_search_results', parameters: {'searchTerm': searchTerm, ...params});
   }
 }
