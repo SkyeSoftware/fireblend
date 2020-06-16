@@ -5,4 +5,5 @@ abstract class FireblendAnalytics {
   Future<void> logAppOpen();
   Future<void> logSearch({String searchTerm, Map<String, dynamic> params});
   Future<void> logViewSearchResults({String searchTerm, Map<String, dynamic> params});
+  Future<void> logGenerateLead({String currency, double value, Map<String, dynamic> params});
 }

@@ -39,4 +39,16 @@ class FireblendAnalyticsMobile extends FireblendAnalytics {
     await analytics
         .logEvent(name: 'view_search_results', parameters: {'searchTerm': searchTerm, ...params});
   }
+
+  @override
+  Future<void> logGenerateLead({String currency, double value, Map<String, dynamic> params}) async {
+    return logEvent(
+      name: 'generate_lead',
+      parameters: filterOutNulls(<String, dynamic>{
+        'currency': currency,
+        'value': value,
+        ...params
+      }),
+    );
+  }
 }
