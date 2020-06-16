@@ -9,8 +9,6 @@ class FireblendAnalyticsWeb extends FireblendAnalytics {
   FireblendAnalyticsWeb({fb.App app})
       : _analytics = app != null ? fb.analytics(app) : fb.analytics();
 
-  FireblendAnalyticsWeb() : _analytics = fb.analytics();
-
   fb.Analytics get analytics => _analytics;
 
   @override

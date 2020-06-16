@@ -45,7 +45,7 @@ class FireblendWeb extends Fireblend{
   }
 
   @override
-  FireblendAnalyticsWeb get analytics => FireblendAnalyticsWeb(_app);
+  FireblendAnalyticsWeb get analytics => FireblendAnalyticsWeb(app: _app);
 
   @override
   FireblendAuthWeb get auth => FireblendAuthWeb(_app);
