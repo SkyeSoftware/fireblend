@@ -10,6 +10,7 @@ import 'dart:async';
 import 'dart:io' show Platform;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fireblend/fireblend.dart';
+import 'package:fireblend_mobile/src/analytics.dart';
 
 import 'src/authentication.dart';
 import 'src/database.dart';
@@ -45,6 +46,10 @@ class FireblendMobile extends Fireblend{
     }
     return FireblendMobile._internal(app);
   }
+
+
+  @override
+  FireblendAnalyticsMobile get analytics => FireblendAnalyticsMobile();
 
   @override
   FireblendAuthMobile get auth => FireblendAuthMobile(_app);

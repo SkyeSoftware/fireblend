@@ -27,7 +27,7 @@ class FireblendAnalyticsWeb extends FireblendAnalytics {
   }
 
   @override
-  Future<void> logAppOpen(String id) async {
+  Future<void> logAppOpen() async {
     analytics.logEvent('app_open', {});
   }
 
